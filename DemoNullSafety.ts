@@ -1,12 +1,7 @@
-interface User {
-    age:number
-    name?:string // now we indicate name field is an optional 
-}
-
 const testCase1 = function() {
     interface User {
-        age:number
-        name:string
+        age:number;
+        name:string;
     }
     
     // name attribute is not set as optional
@@ -19,8 +14,8 @@ testCase1();
 
 const testCase2 = function() {
     interface User {
-        age:number
-        name:string
+        age:number;
+        name:string;
     }
     
     // name attribute is not set as optional
@@ -33,18 +28,23 @@ testCase2();
 
 const testCase3 = function() {
     interface User {
-        age:number
-        name?:string // now we indicate name field is an optional 
+        age:number;
+        name?:string; // now we indicate name field is an optional 
     }
     
     // compiler --strictNullChecks now be able to remind that name attribute is possibly null
     let user:User = Object.create( { age:12 } );
     console.log(user.age > 10);
-    console.log(user.name.toLowerCase()); // produce compile-time error 
+    console.log(user.name.toLowerCase()); // produce compile-time error instead of run-time error
 }
 testCase3();
 
-const testCase4 = function() {    
+const testCase4 = function() { 
+    interface User {
+        age:number;
+        name?:string; // now we indicate name field is an optional 
+    }
+
     // compiler --strictNullChecks will be able to remind that name attribute is possibly null
     let user:User = Object.create( { age:12 } );
     console.log(user.age > 10);
