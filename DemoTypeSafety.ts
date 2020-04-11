@@ -1,6 +1,3 @@
-// cls && npx tsc --strictNullChecks --noImplicitAny index2.ts && node index2.js
-// cls && npx tsc --strictNullChecks --noImplicitAny --strict index2.ts && node index2.js
-
 interface Customer {
     id:number
     age?:number
